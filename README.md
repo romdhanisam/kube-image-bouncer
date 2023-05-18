@@ -79,16 +79,16 @@ Bad things about `ValidatingAdmissionWebhook`:
 To build the project just do:
 
 ```
-$ go get github.com/flavio/kube-image-bouncer
+$ go get github.com/romdhanisam/kube-image-bouncer
 ```
 
 The project dependencies are tracked inside of this repository and are managed
 using [dep](https://github.com/golang/dep).
 
-This application is distributed also as a [Docker image](https://hub.docker.com/r/flavio/kube-image-bouncer/):
+This application is distributed also as a [Docker image](https://hub.docker.com/r/romdhanisam/kube-image-bouncer/):
 
 ```
-$ docker pull flavio/kube-image-bouncer
+$ docker pull romdhanisam/kube-image-bouncer
 ```
 
 # Deployment of `ImagePolicyWebhook`
@@ -179,10 +179,10 @@ Start the webhook by doing:
 $ kube-image-bouncer --cert webhook.pem --key webhook-key.pem
 ```
 
-When using the [Docker image](https://hub.docker.com/r/flavio/kube-image-bouncer/):
+When using the [Docker image](https://hub.docker.com/r/romdhanisam/kube-image-bouncer/):
 
 ```
-$ docker run --rm -v `pwd`/webhook-key.pem:/certs/webhook-key.pem:ro -v `pwd`/webhook.pem:/certs/webhook.pem:ro -p 1323:1323 flavio/kube-image-bouncer -k /certs/webhook-key.pem -c /certs/webhook.pem
+$ docker run --rm -v `pwd`/webhook-key.pem:/certs/webhook-key.pem:ro -v `pwd`/webhook.pem:/certs/webhook.pem:ro -p 1323:1323 romdhanisam/kube-image-bouncer -k /certs/webhook-key.pem -c /certs/webhook.pem
 ```
 
 This will start a container with the server key and certificate mounted read-only
